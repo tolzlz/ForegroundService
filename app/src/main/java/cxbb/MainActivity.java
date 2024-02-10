@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
 
     EditText inputext ;
     Button wechatLogin;
-    private static final String APP_ID = "wx69b45e307c699fc9";
+    private static final String APP_ID = "wx12345678";
     private IWXAPI api;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
