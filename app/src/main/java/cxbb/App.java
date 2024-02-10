@@ -1,4 +1,4 @@
-package com.example.foregroundservice;
+package cxbb;
 
 import android.app.Application;
 import android.app.NotificationChannel;

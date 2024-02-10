@@ -1,4 +1,4 @@
-package com.example.foregroundservice;
+package cxbb;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -9,7 +9,9 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import static com.example.foregroundservice.App.CHANNEL_ID;
+import static cxbb.App.CHANNEL_ID;
+
+import com.example.foregroundservice.R;
 
 public class ExampleService extends Service {
 

@@ -7,23 +7,32 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context="cxbb.MainActivity">
     <EditText
         android:id="@+id/edit_test_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input"/>
+        android:hint="输入内容"/>
     <Button
         android:id="@+id/startServer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="startService"
-        android:text="start_service"/>
+        android:text="开启状态栏通知Service"/>
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="stopService"
-        android:text="stop_service"/>
-
+        android:text="关闭状态栏通知Service"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wechatLogin"
+        android:text="微信登录"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/qqLogin"
+        android:text="QQ登录"/>
 </LinearLayout>
