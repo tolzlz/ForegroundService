@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity{
                 107,110,111,119,110,32,115,115,105,100,62,-17,-68,-125,49,57,50,46,49,54,56,46,48,46,49,48,55,-17,-68,-125,-17,
                 -68,-125,-17,-68,-125,49,-17,-68,-125,-17,-68,-125,48,-17,-68,-125,-17,-68,-125,51,49,-17,-68,-125,56,53,50,56,57,48,101,99,56,50,54,52,56,98,99,102,
                 -17,-68,-125,99,111,109,46,119,117,98,97,-17,-68,-125,-17,-68,-125};
-        RsaCryptService.encrypt(bytes,bytes.length);
+        RsaCryptService.init(getApplicationContext());
+        byte[] by = RsaCryptService.encrypt(bytes,bytes.length);
+        System.out.println(by);
 
 
 
