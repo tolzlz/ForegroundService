@@ -11,7 +11,8 @@ import androidx.core.app.NotificationCompat;
 
 import static cxbb.App.CHANNEL_ID;
 
-import com.example.foregroundservice.R;
+import com.cxbb.R;
+
 
 public class ExampleService extends Service {
 

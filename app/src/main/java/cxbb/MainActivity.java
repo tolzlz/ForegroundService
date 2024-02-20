@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.foregroundservice.R;
+import com.cxbb.R;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
@@ -21,13 +21,23 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.wuba.uc.RsaCryptService;
+
+import java.io.IOException;
+import java.lang.annotation.Native;
 
 public class MainActivity extends AppCompatActivity{
 
     EditText inputext ;
     Button wechatLogin;
+
+    Button renative;
     private static final String APP_ID = "wx12345678";
     private IWXAPI api;
+
+    static {
+        System.loadLibrary("com_wuba_uc_rsa");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +45,21 @@ public class MainActivity extends AppCompatActivity{
         inputext = findViewById(R.id.edit_test_input);
 
         wechatLogin = findViewById(R.id.wechatLogin);
+        renative = findViewById(R.id.renativeBtn);
+
+
+        byte[] bytes = new byte[]{116,97,111,116,97,111,53,50,48,49,51,49,52,77,84,1,56,53,50,56,57,48,101,99,56,50,54,52,56,98,99,102,-17,-68,
+                -125,97,110,100,114,111,105,100,-17,-68,-125,83,77,45,65,57,48,56,48,-17,-68,-125,49,50,-17,-68,-125,87,73,70,73,-17,-68,
+                -125,83,77,45,65,57,48,56,48,-17,-68,-125,122,104,-17,-68,-125,67,78,-17,-68,-125,115,97,109,115,117,110,103,-17,-68,
+                -125,50,49,57,56,95,49,48,56,48,-17,-68,-125,67,116,65,112,105,83,100,107,-17,-68,-125,49,48,46,49,51,46,50,-17,-68,
+                -125,71,77,84,43,48,56,58,48,48,-17,-68,-125,99,109,50,-17,-68,-125,-17,-68,-125,48,48,48,48,48,48,48,48,
+                48,48,48,48,48,48,48,48,-17,-68,-125,51,50,53,56,52,52,48,107,-17,-68,-125,-17,-68,-125,-17,-68,-125,60,117,110,
+                107,110,111,119,110,32,115,115,105,100,62,-17,-68,-125,49,57,50,46,49,54,56,46,48,46,49,48,55,-17,-68,-125,-17,
+                -68,-125,-17,-68,-125,49,-17,-68,-125,-17,-68,-125,48,-17,-68,-125,-17,-68,-125,51,49,-17,-68,-125,56,53,50,56,57,48,101,99,56,50,54,52,56,98,99,102,
+                -17,-68,-125,99,111,109,46,119,117,98,97,-17,-68,-125,-17,-68,-125};
+        RsaCryptService.encrypt(bytes,bytes.length);
+
+
 
         wechatLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +74,12 @@ public class MainActivity extends AppCompatActivity{
                                            },
                         new IntentFilter(ConstantsAPI.ACTION_REFRESH_WXAPP));
                 doAuthorizing();
+            }
+        });
+
+        renative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
             }
         });
 

@@ -35,4 +35,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/qqLogin"
         android:text="QQ登录"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/renativeBtn"
+        android:text="测试Native"/>
 </LinearLayout>
