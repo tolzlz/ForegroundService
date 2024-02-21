@@ -1,4 +1,4 @@
-package cxbb;
+package com.cxbb;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

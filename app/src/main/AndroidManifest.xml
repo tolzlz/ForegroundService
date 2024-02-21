@@ -14,15 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForegroundService"
-        android:name="cxbb.App">
-        <activity android:name="cxbb.MainActivity">
+        android:name=".App"
+        android:debuggable="true">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="cxbb.ExampleService"/>
+        <service android:name=".ExampleService"/>
     </application>
 
 </manifest>

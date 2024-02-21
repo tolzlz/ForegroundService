@@ -1,4 +1,4 @@
-package cxbb;
+package com.cxbb;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -8,10 +8,6 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-
-import static cxbb.App.CHANNEL_ID;
-
-import com.cxbb.R;
 
 
 public class ExampleService extends Service {
@@ -28,7 +24,7 @@ public class ExampleService extends Service {
         Intent notificationIntent = new Intent(this,MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
 
-        Notification notification = new NotificationCompat.Builder(this,CHANNEL_ID)
+        Notification notification = new NotificationCompat.Builder(this, App.CHANNEL_ID)
                 .setContentTitle("Example Service")
                 .setContentText(input)
                 .setSmallIcon(R.drawable.ic_launcher_background)

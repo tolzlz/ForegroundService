@@ -1,4 +1,4 @@
-package cxbb;
+package com.cxbb;
 
 import android.app.Application;
 import android.app.NotificationChannel;
